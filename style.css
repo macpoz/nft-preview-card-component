@@ -34,7 +34,7 @@ body {
   position: relative;
   display: flex;
 }
-.card header > .hover-box {
+.card header > .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -42,14 +42,15 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgba(0,255,247,0.5);
-  visibility: hidden;
+  opacity: 0;
   border-radius: 0.5rem;
+  transition: opacity 250ms ease-in-out;
 }
-.card header:hover > .hover-box {
+.card header:hover > .overlay {
   cursor: pointer;
-  visibility: visible;
+  opacity: 1;
 }
-.card header > img:not(.hover-box) {
+.card header > img:not(.overlay) {
   width: 100%;
   border-radius: 0.5rem;
 }
@@ -61,13 +62,14 @@ body {
   margin-bottom: 1rem;
   border-bottom: 1px solid #2f415b;
 }
-.card main h1 {
+.card main a {
   color: #fff;
   margin-bottom: 1rem;
   font-size: 22px;
   font-weight: 600;
+  text-decoration: none;
 }
-.card main h1:hover {
+.card main a:hover {
   color: #00fff7;
   cursor: pointer;
 }
@@ -107,11 +109,11 @@ body {
   border: 1px solid #fff;
   margin-right: 1rem;
 }
-.card footer p > span {
+.card footer p > a {
   color: #fff;
   font-weight: 300;
+  text-decoration: none;
 }
-.card footer p > span:hover {
+.card footer p > a:hover {
   color: #00fff7;
-  cursor: pointer;
 }
